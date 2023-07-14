@@ -1,17 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
-#include "_putchar.c"
 #include <stdio.h>
 
-void putstr(char *str)
-{
-	int i = 0;
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
-}
+#define ERR_MSG "Error"
 
 int is_digit(char *s)
 {
@@ -25,12 +16,6 @@ int is_digit(char *s)
 	}
 	return (1);
 }
-void errors(void)
-{
-	putstr("Error\n");
-	exit(98);
-}
-
 
 int _strlen(char *s)
 {
@@ -43,6 +28,11 @@ int _strlen(char *s)
 	return (i);
 }
 
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
+}
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
@@ -86,5 +76,4 @@ int main(int argc, char *argv[])
 	free(result);
 	return (0);
 }
-
 
